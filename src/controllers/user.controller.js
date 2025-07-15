@@ -167,6 +167,7 @@ const logoutUser = asyncHandler( async(req, res) => {
     .clearCookie("refreshToken", options)
     .json(new ApiResponse(200 ,{}, "User logged out successfully"))
 })
+// refresh token so that user dont need to login again and again
 
 const refreshAccessToken = asyncHandler (async(req,res)=>{
     const incomingRefreshToken = req.cookies.refreshToken || req.body.refreshToken
